@@ -20,12 +20,12 @@ pipeline {
                 sh 'python3 -m unittest test_two_sum.py'
             }
         }
-        stage('Test2') {
-            steps {
-                echo 'Executing a test that should fail'
-                sh 'python3 -m unittest test_2s_fail.py'
-            }
-        }
+        // stage('Test2') {
+        //     steps {
+        //         echo 'Executing a test that should fail'
+        //         sh 'python3 -m unittest test_2s_fail.py'
+        //     }
+        //}
         stage('Deploy') {
             steps {
                 echo 'in deployment'
