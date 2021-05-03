@@ -11,6 +11,8 @@ pipeline {
         stage ('SCM Checkout') {
             steps {
                 git 'https://github.com/Michael-mag/jenkins_test.git'
+                sh 'pwd'
+                sh 'ls'
             }
         }
         stage ('Initialize') {
