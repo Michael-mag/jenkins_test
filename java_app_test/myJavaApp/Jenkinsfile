@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment {
+        PATH = "/usr/local/Cellar/maven/3.8.1/bin:$PATH"
+    }
     tools {
         maven 'Maven 3.3.9'
         jdk 'jdk8'
