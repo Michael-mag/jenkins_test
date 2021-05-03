@@ -30,6 +30,7 @@ pipeline {
             }
             post {
                 success {
+                    sh 'cd ./myJavaApp/'
                     junit 'target/surefire-reports/**/*.xml' 
                 }
             }
