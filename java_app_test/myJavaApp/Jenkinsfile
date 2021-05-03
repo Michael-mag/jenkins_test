@@ -10,6 +10,7 @@ pipeline {
     stages {
         stage ('Initialize') {
             steps {
+                git 'https://github.com/Michael-mag/jenkins_test.git'
                 sh '''
                     echo "PATH = ${PATH}"
                     echo "M2_HOME = ${M2_HOME}"
