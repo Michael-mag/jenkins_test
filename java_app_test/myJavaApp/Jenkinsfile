@@ -9,12 +9,16 @@ pipeline {
     }
     stages {
         stage ('SCM Checkout') {
-            git 'https://github.com/Michael-mag/jenkins_test.git'
+            steps {
+                git 'https://github.com/Michael-mag/jenkins_test.git'
+            }
         }
         stage ('package application'){
-            sh '''
+            steps { 
+                sh '''
                 mvn package
-            '''
+                '''
+            }
         }
         stage ('Initialize') {
             steps {
