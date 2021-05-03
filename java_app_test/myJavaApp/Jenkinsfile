@@ -8,9 +8,16 @@ pipeline {
         jdk 'jdk8'
     }
     stages {
+        stage ('SCM Checkout') {
+            git 'https://github.com/Michael-mag/jenkins_test.git'
+        }
+        stage ('package application'){
+            sh '''
+                mvn package
+            '''
+        }
         stage ('Initialize') {
             steps {
-                git 'https://github.com/Michael-mag/jenkins_test.git'
                 sh '''
                     echo "PATH = ${PATH}"
                     echo "M2_HOME = ${M2_HOME}"
